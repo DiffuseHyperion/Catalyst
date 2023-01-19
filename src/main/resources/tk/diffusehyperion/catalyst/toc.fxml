@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="333.0" prefWidth="600.0" spacing="5.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tk.diffusehyperion.catalyst.TOCController">
+   <children>
+      <Label text="Catalyst - Terms and Conditions" />
+      <Label opacity="0.3" text="(help i dont know how to write these)" />
+      <Label text="By using this software (Catalyst), you understand that I am not the creator of sh1mmer, which is a creation from Mercury Workshop. I am not able to provide any support reguarding the technical details of sh1mmer. I strongly encourage you to read up on both writeups on how this exploit works. https://coolelectronics.me/blog/breaking-cros-1, https://coolelectronics.me/blog/breaking-cros-2" textAlignment="CENTER" wrapText="true" />
+      <Label text="Instructions on how to get the files required for this software to run are available on https://sh1mmer.me, you will have to produce the files yourself. No support will be given on how to attain these files. Skid." textAlignment="CENTER" wrapText="true" />
+      <Label text="I reserve the right to remove this software at my discretion. If any Mercury Workshop members are unhappy about this software, please contact me at DiffuseHyperion#0014 and provide good reasoning." textAlignment="CENTER" wrapText="true" />
+      <Label text="By utilizing sh1mmer, you understand that neither me (DiffuseHyperion) nor Mercury Workshop are liable for whatever you do with your chromebook, nor the damages that you cause. Please use this exploit responsibly." textAlignment="CENTER" wrapText="true" />
+      <Button mnemonicParsing="false" onAction="#returnToMain" text="Back to home page" />
+   </children>
+   <padding>
+      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+   </padding>
+</VBox>
