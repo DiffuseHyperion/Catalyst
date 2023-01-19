@@ -3,7 +3,6 @@ package tk.diffusehyperion.catalyst;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.stage.DirectoryChooser;
@@ -96,6 +95,25 @@ public class MainController {
         // one day i will fully turn the shell script into java, today is not that day though
         // if any mcw people see this, prs appreciated :)
 
+        // linux version
+        ProcessBuilder pb = new ProcessBuilder("sudo", "./wax.sh", shimFile.getAbsolutePath());
+        pb.directory(Path.of(sourceDirectory.getAbsolutePath(), "/wax").toFile());
+        try {
+            Process p = pb.start();
+            p.onExit().thenRun(() -> {
+                if (p.exitValue() != 0) {
+                    Alert a = new Alert(Alert.AlertType.ERROR);
+                    a.setContentText("Something went wrong while building the image file!");
+                    a.show();
+                } else {
+                    Alert a = new Alert(Alert.AlertType.INFORMATION);
+                    a.setContentText("sh1mmer file successfully built! Flash the original shim file onto your usb now to use sh1mmer.");
+                    a.show();
+                }
+            });
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     private @Nullable File getFile(Pair<String, String> filter, String error) {
